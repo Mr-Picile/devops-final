@@ -1,0 +1,20 @@
+name: Build-Curl
+on:
+  workflow_dispatch
+permissions: {}
+jobs:
+  build-and-curl:
+    runs-on: ubuntu-latest
+    steps:
+    - name: get-code
+      # uses tag runs a premade action from github marketplace
+      uses: actions/de0fac2e4500dabe0009e67214ff5f5447ce83dd@v6.0.2
+    - name: docker-build
+      run: |
+        docker build -t pipeline-test .
+    - name: docker-run
+      run: docker run -p 8000:8000 -e DJANGO_SECRET_KEY="wahwah" pipeline-test
+    - name: curl-ftw
+      run: |
+        sleep 10
+        curl -f http://localhost:8000/
