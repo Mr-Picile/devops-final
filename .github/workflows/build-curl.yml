@@ -15,7 +15,7 @@ jobs:
       run: |
         docker build -t pipeline-test .
     - name: docker-run
-      run: docker run -p 8000:8000 -e DJANGO_SECRET_KEY="wahwah" pipeline-test
+      run: docker run -p 8000:8000 -e DJANGO_SECRET_KEY="wahwah" -d pipeline-test
     - name: curl-ftw
       run: |
         sleep 10
