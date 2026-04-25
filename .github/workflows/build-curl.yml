@@ -1,4 +1,4 @@
-nvname: Build-Curl
+name: Build-Curl
 # tells github which repository events should trigger this workflow
 on:
   workflow_dispatch
