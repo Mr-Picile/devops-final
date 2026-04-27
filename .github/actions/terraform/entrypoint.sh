@@ -10,9 +10,9 @@ export STATE_KEY=${INPUT_STATE_KEY}
 export TF_STAGE=${INPUT_TF_STAGE}
 
 if [[ "$TF_STAGE" == "stage1" ]]; then
-	terraform -chdir=${INPUT_IF_STAGE} init -backend-config="key=${INPUT_STATE_KEY}.tfstate"
-	terraform -chdir=${INPUT_IF_STAGE} plan -out=${INPUT_TF_STAGE}.tfplan
-	terraform -chdir=${INPUT_IF_STAGE} apply ${INPUT_TF_STAGE}.tfplan
+	terraform -chdir=${INPUT_TF_STAGE} init -backend-config="key=${INPUT_STATE_KEY}.tfstate"
+	terraform -chdir=${INPUT_TF_STAGE} plan -out=${INPUT_TF_STAGE}.tfplan
+	terraform -chdir=${INPUT_TF_STAGE} apply ${INPUT_TF_STAGE}.tfplan
 fi
 
 #terraform plan
