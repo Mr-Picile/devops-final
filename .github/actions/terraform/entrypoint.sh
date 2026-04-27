@@ -20,6 +20,6 @@ if [[ "$TF_STAGE" == "stage1" ]]; then
 	terraform -chdir=${INPUT_IF_STAGE} apply ${INPUT_TF_STAGE}.tfplan
 fi
 
-terraform plan
+#terraform plan
 
-terraform --apply-auto-approve
+#terraform --apply-auto-approve
