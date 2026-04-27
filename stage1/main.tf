@@ -17,8 +17,8 @@ provider "azurerm" {
   features {}
 }
 
-resource "azurerm_container_registry" "YOUR ACCT NAME" {
-  name = "acrteacheracmp2400"
+resource "azurerm_container_registry" "pplozay-ACR" {
+  name = "pplozayacmp2400"
   resource_group_name = "rg-pplozay"
   location = "Central US"
   sku = "Basic"
