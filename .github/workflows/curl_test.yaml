@@ -73,7 +73,7 @@ jobs:
         docker push pplozayacmp2400.azurecr.io/final
 
   terraform-stage-2:
-    needs: [build-tag-push]
+    needs: build-tag-push
     runs-on: ubuntu-latest
     steps:
     - name: get-code
