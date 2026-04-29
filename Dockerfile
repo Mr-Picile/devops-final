@@ -6,7 +6,7 @@ FROM python:3.13.13-alpine@sha256:420cd0bf0f3998275875e02ecd5808168cf0843cbb4d3c
 #here i am specifying that the default folder in the container should be /app
 WORKDIR /app
 
-#this tells docker to copy the requirements.txt into the container's /app folder
+#this tells docker to copy the requirements.txt into the image's /app folder
 COPY requirements.txt .
 
 #run during the build process, this runs the command pip install in the docker image and installs all the packages in requirements.txt
