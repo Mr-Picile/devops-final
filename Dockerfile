@@ -9,14 +9,14 @@ WORKDIR /app
 #this tells docker to copy the requirements.txt into the container's /app folder
 COPY requirements.txt .
 
-#run during the build process, this runs the command pip install in the docker container and installs all the packages in requirements.txt
+#run during the build process, this runs the command pip install in the docker image and installs all the packages in requirements.txt
 RUN pip install -r requirements.txt
 
-#this tells docker to copy the app files into the container
+#this tells docker to copy the app files into the image
 COPY . .
 
 #this opens port 8000
 EXPOSE 8000
 
-#when the built container gets run, this is the first command that executes, it starts the django app
+#when the built image gets run, this is the first command that executes, it starts the django app
 CMD ["python", "manage.py", "runserver", "0.0.0.0:8000"]
